@@ -30,4 +30,8 @@ export class HttpService {
     .map((res: Response) => res);
   }
 
+  getTurpinImg(url){
+    return this.http.get(url).map((res: Response) => res);
+  }
+
 }

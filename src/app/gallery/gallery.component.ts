@@ -20,8 +20,8 @@ const STOPPED = "galleryStop";
   animations: [
     trigger('isVisibleChanged', [
       state('middle' , style({ transform: 'translateX(0px)' })),
-      state('left', style({ transform: 'translateX(-600px)'  })),
-      state('right', style({ transform: 'translateX(600px)'  })),
+      state('left', style({ transform: 'translateX(-250%)'  })),
+      state('right', style({ transform: 'translateX(250%)'  })),
       transition('right => middle', animate('1578ms')),
       transition('middle => left', animate('1578ms')),
       transition('left => right', animate('100ms'))
@@ -29,7 +29,7 @@ const STOPPED = "galleryStop";
   ]
 })
 export class GalleryComponent implements OnInit {
-  private urlTurpin;
+  private urlTurpin = "assets/turpin.jpg";
   private listIds = [];
   private playing = false;
   private classValue = STOPPED;
@@ -54,9 +54,7 @@ export class GalleryComponent implements OnInit {
     const file = files[0];
     this.http.getTurpin(file, this.listIds).subscribe((data) => {
       console.log('salam');
-      setTimeout(() => {
-        this.urlTurpin = URL_PREFIX + data.text() + EXTENSION; 
-      }, 9000);
+      this.tryToGetTurpin(URL_PREFIX + data.text() + EXTENSION);
     });
   }
 
@@ -70,6 +68,18 @@ export class GalleryComponent implements OnInit {
       this.currentStatus = 'middle';
     }
     this.playing = !this.playing;
+  }
+
+  tryToGetTurpin(url){
+    this.http.getTurpinImg(url).subscribe((data) => {
+      console.log(data);
+      this.urlTurpin = url;
+    },
+    (err) => {
+      setTimeout(() => {
+        this.tryToGetTurpin(url);
+      }, 1000);
+    });
   }
 
 }
