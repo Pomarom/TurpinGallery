@@ -1,0 +1,72 @@
+.galleryPlay{
+    background: url('assets/wall2.jpg') fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height : 100%;
+  width:100%;
+  position: absolute;
+  top : 0;
+  left : 0;
+  z-index: -1;
+  -webkit-animation:5s scroll infinite linear;
+  -moz-animation:5s scroll infinite linear;
+  -o-animation:5s scroll infinite linear;
+  -ms-animation:5s scroll infinite linear;
+  animation:5s scroll infinite linear;
+}
+
+.galleryStop{
+    background: url('assets/wall2.jpg') fixed;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    height : 100%;
+    width:100%;
+    position: absolute;
+    top : 0;
+    left : 0;
+    z-index: -1;
+}
+
+@-webkit-keyframes scroll{
+  100%{
+    background-position:-3840px 0px;
+  }
+}
+
+@-moz-keyframes scroll{
+  100%{
+    background-position:-3840px 0px;
+  }
+}
+
+@-o-keyframes scroll{
+  100%{
+    background-position:-3840px 0px;
+  }
+}
+
+@-ms-keyframes scroll{
+  100%{
+    background-position:-3840px 0px;
+  }
+}
+
+@keyframes scroll{
+  100%{
+    background-position:-3840px 0px;
+  }
+}
+
+
+.no-margin {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.pt10{
+    padding-top:10px;
+}
