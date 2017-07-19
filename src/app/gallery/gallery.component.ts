@@ -20,7 +20,7 @@ const STOPPED = "galleryStop";
   animations: [
     trigger('isVisibleChanged', [
       state('middle' , style({ transform: 'translateX(0px)' })),
-      state('left', style({ transform: 'translateX(-250%)'  })),
+      state('left', style({ transform: 'translateX(-70vw)', })),
       state('right', style({ transform: 'translateX(250%)'  })),
       transition('right => middle', animate('1578ms')),
       transition('middle => left', animate('1578ms')),
@@ -62,7 +62,10 @@ export class GalleryComponent implements OnInit {
     if (!this.playing){
       this.classValue = PLAYING;
       this.currentStatus = 'left';
-      setTimeout(function(){ this.currentStatus = 'right';console.log(this.currentStatus); }, 2000);
+      setTimeout(()=> { 
+        this.currentStatus = 'right';
+        console.log(this.currentStatus); 
+      }, 2000);
     } else {
       this.classValue = STOPPED;
       this.currentStatus = 'middle';
