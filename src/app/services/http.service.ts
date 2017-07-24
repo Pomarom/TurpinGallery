@@ -13,7 +13,8 @@ export class HttpService {
   }
 
   getTurpin(file, listIds) {
-      const formData = new FormData();
+    console.log(file);
+    const formData = new FormData();
     formData.append('input_image', file);
     formData.append('style', listIds[Math.floor(Math.random() * listIds.length)]);
     const headers = new Headers({});
@@ -34,4 +35,5 @@ export class HttpService {
     return this.http.get(url).map((res: Response) => res);
   }
 
+  
 }

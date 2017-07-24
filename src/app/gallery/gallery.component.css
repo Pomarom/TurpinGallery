@@ -17,6 +17,7 @@
   animation:5s scroll infinite linear;
 }
 
+/* TURPIN RATIO 1.389 */
 .galleryStop{
     background: url('assets/wall2.jpg') fixed;
     -webkit-background-size: cover;
@@ -69,4 +70,15 @@
 
 .pt10{
     padding-top:10px;
+}
+
+.curtain {
+  transform-origin: top;
+  position: absolute;
+  z-index : 20;
+  left: 37%;
+  background-color : white;
+  width:26%;
+  height : 75%;
+
 }

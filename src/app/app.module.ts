@@ -9,6 +9,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 
 import { HttpService } from './services/http.service';
+import { MusicService } from './services/music.service';
 
 const appRoutes: Routes = [
   { path: 'gallery', component: GalleryComponent },
@@ -35,7 +36,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, MusicService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

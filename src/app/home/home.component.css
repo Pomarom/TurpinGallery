@@ -4,6 +4,26 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  top : 0;
+  left : 0;
+  position: absolute;
   height : 100%;
   width:100%;
+}
+
+.layer{
+  background-color : black; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  top : 0;
+  left : 0;
+  position: absolute;
+  height : 100%;
+  width:100%;
+}
+
+.cs{
+  height: 100%;
 }

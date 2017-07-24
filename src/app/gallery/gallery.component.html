@@ -1,10 +1,12 @@
 <div class="{{classValue}}">
 </div>
-  <div class="row no-margin text-center pt10" style="height:80%">
-      <img [src]="urlTurpin" [@isVisibleChanged]="currentStatus" style="width : 30%"/>
+  <div class="row no-margin text-center pt10" style="height:75%">
+      <div class='curtain' [@curtain]="curtainDown"></div> 
+      <img [src]="urlTurpin" [@isVisibleChanged]="currentStatus" style="height : 100%"/>
       <div>{{currentStatus}}</div>
   </div>
   <button (click)='getTurpin()'>Get Turpin</button>
   <button (click)='toggleClass()'>toggle</button>
+  <button (click)='toggleCurtain()'>curtain</button>
   <input type="file" (change)="getTurpin($event);">
   

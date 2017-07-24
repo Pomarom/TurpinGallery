@@ -1,2 +1,18 @@
 <div class="fs">
 </div>
+<div class="layer" (click)="toggle()" [@blur]="isBlurred">
+</div>
+<div class="row" style="width : 100%; height : 30%;">
+    
+</div>
+<div class="row" style="width : 100%; height : 40%;">
+    <div class='col-xs-12 text-center' style="height : 100%;">
+        <img class="cs" src="assets/cs.png" [@logo]="isBlurred" (@logo.done)="logoDone($event)"/>
+    </div>
+</div>
+<div class="row" style="width : 100%; height : 30%;">
+    <div class='col-xs-12 text-center' style="height : 100%;">
+        <button (click)="goGallery()">Enter</button>
+    </div>
+    
+</div>
